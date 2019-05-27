@@ -8,4 +8,11 @@
 <div class="container">
     {!! $post->content !!}
 </div>
+
+@component('components.comment')
+    @slot('id')
+        {{ $post->id }}
+    @endslot
+@endcomponent
+
 @endsection
