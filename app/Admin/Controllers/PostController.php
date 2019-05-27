@@ -119,7 +119,7 @@ class PostController extends Controller
         $form = new Form(new Post);
 
         $form->text('title', 'Title');
-        $form->textarea('content', 'Content');
+        $form->ckeditor('content', 'Content');
 
         return $form;
     }
