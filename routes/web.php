@@ -14,3 +14,5 @@
 Route::get('/', 'PostController@index');
 
 Route::resource('posts', 'PostController', ['only' => ['index', 'show']]);
+
+Route::post('/posts/{id}/comments', 'CommentController@store');

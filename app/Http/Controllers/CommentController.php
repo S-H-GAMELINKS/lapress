@@ -15,8 +15,15 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id, Request $request)
     {
-        //
+        $comment = new Comment();
+
+        $comment->content = $request->input('content');
+        $comment->post_id = $id;
+
+        $comment->save();
+
+        return redirect()->route('posts.show', ['id' => $id])->with('message', 'Item created successfully.');
     }
 }
