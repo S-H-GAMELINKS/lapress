@@ -1,3 +1,3 @@
 @foreach($posts as $post)
-    <p>{{ $post->title }}</p>
+    <p><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></p>
 @endforeach
